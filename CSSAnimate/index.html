@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized Web Page</title>
+    <style>
+        /* Critical CSS: สไตล์ที่จำเป็นสำหรับการแสดงผลเนื้อหา above-the-fold */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+        .important-content {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Our Website</h1>
+    </div>
+    <div class="important-content">
+        Content that appears above the fold
+    </div>
+    <script>
+        // Lazy Load CSS
+        window.addEventListener('load', function() {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'styles.css'; // ลิงก์ไปยังไฟล์ CSS ที่เหลือ
+            document.head.appendChild(link);
+        });
+    </script>
+    <script>
+        // ตรวจจับการเลื่อนหน้าและเพิ่มอนิเมชั่น
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+        
+            document.querySelectorAll('.scroll-animation').forEach((element) => {
+                observer.observe(element);
+            });
+        });
+        </script>
+        <script>
+// ตรวจจับการเลื่อนหน้าและเพิ่มอนิเมชั่น
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    document.querySelectorAll('.scroll-animation').forEach((element) => {
+        observer.observe(element);
+    });
+});
+</script>
+</body>
+<body oncontextmenu="return false;"></body>
+</html>

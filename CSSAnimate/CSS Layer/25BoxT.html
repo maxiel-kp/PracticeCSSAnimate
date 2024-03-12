@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screen Split into 25 Sections with Specific Merge</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Create 5 columns */
+    grid-template-rows: repeat(5, 1fr); /* Create 5 rows */
+    height: 100vh; /* 100% of the viewport height */
+    gap: 5px; /* Adds a gap between grid items */
+  }
+  .grid-item {
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    color: white;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    background-color: #4caf50; /* Green for other items */
+  }
+
+  /* Assign different background colors */
+  .merged {
+    grid-column: 1 / 6; /* Span across all 5 columns in the first row */
+    background-color: #ff9800; /* Orange for merged item */
+  }
+
+  /* Styling for merged cells */
+  .merged-13-18 {
+    grid-column: 3; /* Span from column 3 to the end of column 5 */
+    grid-row: 3 / 5; /* Span from row 3 to the end of row 4 */
+    background-color: #ff9800; /* Orange for merged item */
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Generate grid items up to 12 -->
+  <div class="grid-item merged">Merged 1-5</div>
+  <div class="grid-item">6</div>
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>
+  <div class="grid-item">10</div>
+  <div class="grid-item">11</div>
+  <div class="grid-item">12</div>
+  <!-- Merged grid item for 13 to 18 -->
+  <div class="grid-item merged-13-18">Merged 13-18</div>
+
+  
+  <div class="grid-item">14</div>
+  <div class="grid-item">15</div>
+  <div class="grid-item">16</div>
+  <div class="grid-item">17</div>
+  <!-- Generate remaining grid items from 19 -->
+  <div class="grid-item">19</div>
+  <div class="grid-item">20</div>
+  <div class="grid-item">21</div>
+  <div class="grid-item">22</div>
+  <div class="grid-item">23</div>
+  <div class="grid-item">24</div>
+  <div class="grid-item">25</div>
+</div>
+
+</body>
+</html>

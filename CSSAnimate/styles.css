@@ -1,0 +1,33 @@
+/* styles.css - ไฟล์ CSS สำหรับ Lazy Loading */
+
+/* สไตล์สำหรับเนื้อหาที่ไม่อยู่ above-the-fold */
+.additional-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* อนิเมชั่นสำหรับ elements เมื่อเลื่อนผ่าน */
+.scroll-animation {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.scroll-animation.visible {
+    opacity: 1;
+}
+
+/* ตกแต่งเพิ่มเติม */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;         /* Non-prefixed version, currently supported by Chrome, Opera, and Edge */
+}
